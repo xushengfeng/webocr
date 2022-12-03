@@ -10,6 +10,10 @@ drop_el.ondrop = (e) => {
     e.preventDefault();
     put_datatransfer(e.dataTransfer);
 };
+drop_el.onpaste = (e) => {
+    e.preventDefault();
+    put_datatransfer(e.clipboardData);
+};
 
 document.getElementById("run").onclick = () => {
     run_ocr();
