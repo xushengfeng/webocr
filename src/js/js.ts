@@ -4,6 +4,7 @@ const drop_el = document.getElementById("drop");
 const imgs_el = document.getElementById("img_view");
 const upload_pel = document.getElementById("file_input");
 const upload_el = document.getElementById("upload") as HTMLInputElement;
+const output_el = document.getElementById("r") as HTMLTextAreaElement;
 
 drop_el.ondragover = (e) => {
     e.preventDefault();
@@ -64,12 +65,14 @@ function create_img(src: string) {
 }
 
 function run_ocr() {
-    imgs_el.querySelectorAll(":scope > div > img").forEach((el: HTMLImageElement) => {
-        to_text(el);
+    output_el.value = "";
+    output = [];
+    imgs_el.querySelectorAll(":scope > div > img").forEach((el: HTMLImageElement, i) => {
+        to_text(el, i);
     });
 }
 
-function to_text(img: HTMLImageElement | HTMLCanvasElement) {
+function to_text(img: HTMLImageElement | HTMLCanvasElement, i: number) {
     let canvas = document.createElement("canvas");
     let w = img.width,
         h = img.height;
@@ -96,6 +99,8 @@ function to_text(img: HTMLImageElement | HTMLCanvasElement) {
         }
         img.parentElement.append(div);
         console.log(tl);
+        output[i] = tl.join("\n");
+        output_el.value = output.join("\n");
     });
 }
 
@@ -114,3 +119,5 @@ async function start() {
         node: true,
     });
 }
+
+let output = [];
