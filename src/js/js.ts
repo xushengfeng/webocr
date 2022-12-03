@@ -2,6 +2,8 @@ import "../../css/css.css";
 
 const drop_el = document.getElementById("drop");
 const imgs_el = document.getElementById("img_view");
+const upload_pel = document.getElementById("file_input");
+const upload_el = document.getElementById("upload") as HTMLInputElement;
 
 drop_el.ondragover = (e) => {
     e.preventDefault();
@@ -13,6 +15,22 @@ drop_el.ondrop = (e) => {
 drop_el.onpaste = (e) => {
     e.preventDefault();
     put_datatransfer(e.clipboardData);
+};
+upload_pel.onclick = () => {
+    upload_el.click();
+};
+upload_el.onchange = () => {
+    let files = upload_el.files;
+    for (let f of files) {
+        let type = f.type.split("/")[0];
+        if (type != "image") continue;
+        let reader = new FileReader();
+        reader.readAsDataURL(f);
+        reader.onload = () => {
+            let el = create_img(reader.result as string);
+            imgs_el.append(el);
+        };
+    }
 };
 
 document.getElementById("run").onclick = () => {
