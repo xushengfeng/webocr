@@ -64,8 +64,9 @@ body > #main {
     @apply w-full;
 }
 .img_el > div {
-    @apply absolute top-0 left-0;
+    @apply absolute top-0 left-0 w-full h-full;
 }
 .img_el > div > p {
-    @apply absolute;
+    @apply absolute text-justify text-transparent;
+    text-align-last: justify;
 }

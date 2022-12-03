@@ -71,10 +71,12 @@ function run_ocr() {
 
 function to_text(img: HTMLImageElement | HTMLCanvasElement) {
     let canvas = document.createElement("canvas");
-    canvas.width = img.width;
-    canvas.height = img.height;
+    let w = img.width,
+        h = img.height;
+    canvas.width = w;
+    canvas.height = h;
     canvas.getContext("2d").drawImage(img, 0, 0);
-    ocr.ocr(canvas.getContext("2d").getImageData(0, 0, img.width, img.height)).then((v) => {
+    ocr.ocr(canvas.getContext("2d").getImageData(0, 0, w, h)).then((v) => {
         let tl = [];
         let div = document.createElement("div");
         for (let i of v) {
@@ -85,12 +87,10 @@ function to_text(img: HTMLImageElement | HTMLCanvasElement) {
             let x1 = i.box[2][0];
             let y1 = i.box[2][1];
             let xel = document.createElement("p");
-            xel.style.left = x0 + "px";
-            xel.style.top = y0 + "px";
-            xel.style.width = x1 - x0 + "px";
-            xel.style.height = y1 - y0 + "px";
-            xel.style.color = "transparent";
-            xel.style.fontSize = `${(x1 - x0) / i.text.length}px`;
+            xel.style.left = `${(x0 / w) * 100}%`;
+            xel.style.top = `${(y0 / h) * 100}%`;
+            xel.style.width = `${((x1 - x0) / w) * 100}%`;
+            xel.style.height = `${((y1 - y0) / h) * 100}%`;
             div.append(xel);
             xel.innerText = i.text;
         }
