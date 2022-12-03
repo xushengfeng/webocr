@@ -37,6 +37,11 @@ upload_el.onchange = () => {
 document.getElementById("run").onclick = () => {
     run_ocr();
 };
+document.getElementById("close").onclick = () => {
+    output_el.value = "";
+    output = [];
+    imgs_el.innerHTML = "";
+};
 
 /** 拖放数据处理 */
 function put_datatransfer(data: DataTransfer) {
