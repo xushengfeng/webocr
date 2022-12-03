@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    --blur: blur(10px);
+    --icon-color: none;
+    --icon-p-b-size: 32px;
+    --icon-size: 24px;
+    --icon-margin: 4px;
+    --item-height: 24px;
+    --item-icon: 24px;
+    --item-icon-margin: 0;
+    --zest-index: 0;
+    --x-x-bar-w: 16px;
+    --x-x-handle-d: block;
+    --x-x-handle-w: 8px;
+    --x-x-handle-o: calc(50% - var(--x-x-handle-w) / 2);
+    --x-x-handle-o2: calc(-0.5 * var(--x-x-handle-w));
+    --zoom: 1;
+}
+
+.icon {
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    filter: var(--icon-color);
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.icon-m {
+    @apply h-8 w-8 relative cursor-pointer;
+}
+.icon-m > .icon {
+    @apply h-6 w-6 top-1 left-1;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+body > #main {
+    height: 100%;
+    display: grid;
+    grid-template-rows: min-content auto;
+}
+
+.img_el {
+    @apply relative;
+}
+.img_el > div {
+    @apply absolute top-0 left-0;
+}
+.img_el > div > p {
+    @apply absolute;
+}
