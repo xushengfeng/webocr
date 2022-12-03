@@ -54,6 +54,11 @@ body > #main {
     grid-template-rows: min-content auto;
 }
 
+.no_run {
+    cursor: not-allowed !important;
+    background-color: transparent;
+}
+
 #text_output {
     grid-template-columns: min-content min-content;
     grid-template-rows: min-content auto;

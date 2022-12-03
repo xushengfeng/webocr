@@ -5,6 +5,7 @@ const imgs_el = document.getElementById("img_view");
 const upload_pel = document.getElementById("file_input");
 const upload_el = document.getElementById("upload") as HTMLInputElement;
 const output_el = document.getElementById("r") as HTMLTextAreaElement;
+const run_el = document.getElementById("run");
 
 drop_el.ondragover = (e) => {
     e.preventDefault();
@@ -33,8 +34,8 @@ upload_el.onchange = () => {
         };
     }
 };
-
-document.getElementById("run").onclick = () => {
+run_el.classList.add("no_run");
+run_el.onclick = () => {
     run_ocr();
 };
 document.getElementById("close").onclick = () => {
@@ -42,6 +43,8 @@ document.getElementById("close").onclick = () => {
     output = [];
     imgs_el.innerHTML = "";
 };
+
+var ocr_init = false;
 
 /** 拖放数据处理 */
 function put_datatransfer(data: DataTransfer) {
@@ -70,6 +73,7 @@ function create_img(src: string) {
 }
 
 function run_ocr() {
+    if (!ocr_init) return;
     output_el.value = "";
     output = [];
     imgs_el.querySelectorAll(":scope > div > div").forEach((el: HTMLElement) => {
@@ -126,6 +130,8 @@ async function start() {
         dev: false,
         node: true,
     });
+    ocr_init = true;
+    run_el.classList.remove("no_run");
 }
 
 let output = [];
