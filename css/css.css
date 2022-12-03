@@ -85,3 +85,16 @@ body > #main {
     @apply absolute text-justify text-transparent;
     text-align-last: justify;
 }
+
+@media all and (orientation: portrait) {
+    body > #main {
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content auto;
+    }
+    #drop {
+        @apply h-32;
+    }
+    #img_view {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+}
