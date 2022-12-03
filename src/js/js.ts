@@ -67,6 +67,9 @@ function create_img(src: string) {
 function run_ocr() {
     output_el.value = "";
     output = [];
+    imgs_el.querySelectorAll(":scope > div > div").forEach((el: HTMLElement) => {
+        el.innerHTML = "";
+    });
     imgs_el.querySelectorAll(":scope > div > img").forEach((el: HTMLImageElement, i) => {
         to_text(el, i);
     });
