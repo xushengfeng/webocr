@@ -86,6 +86,13 @@ body > #main {
     text-align-last: justify;
 }
 
+.other_software {
+    @apply flex flex-col items-center p-8;
+}
+.other_software img {
+    @apply w-40;
+}
+
 @media all and (orientation: portrait) {
     body > #main {
         grid-template-columns: 1fr;
