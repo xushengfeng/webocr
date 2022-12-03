@@ -50,11 +50,17 @@ body {
 body > #main {
     min-height: 100%;
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content auto;
+}
+
+#text_output {
     grid-template-rows: min-content auto;
 }
 
 #img_view {
     @apply flex flex-col gap-2 items-center;
+    grid-area: 2 / 1 / 3 / 3;
 }
 
 .img_el {

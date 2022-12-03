@@ -14,14 +14,19 @@
 
 <body>
     <div id="main">
-        <div id="img_input" class="w-full h-80 flex p-2">
+        <div id="img_input" class="w-full flex p-2">
             <input type="file" name="upload" id="upload" multiple class="hidden">
             <div id="drop"
-                class="w-80 h-80 flex justify-center items-center border-dotted border-2 border-cyan-400 rounded">
-                <div id="file_input" class="icon-m shadow-sm rounded-sm mr-1 bg-cyan-100"><img src="./assets/icons/upload.svg" class="icon"></div><span
+                class="w-full h-80 flex justify-center items-center border-dotted border-2 border-cyan-400 rounded">
+                <div id="file_input" class="icon-m shadow-sm rounded-sm mr-1 bg-cyan-100"><img
+                        src="./assets/icons/upload.svg" class="icon"></div><span
                     class="opacity-75 select-none">拖拽或粘贴图像到此处</span>
             </div>
-            <div id="run" class="icon-m shadow-sm rounded-sm mr-1 bg-cyan-100 w-16"><img src="./assets/icons/ocr.svg" class="icon"></div>
+        </div>
+        <div id="text_output" class="p-2 grid gap-1">
+            <div id="run" class="icon-m shadow-sm rounded-sm bg-cyan-100 w-16"><img src="./assets/icons/ocr.svg"
+                    class="icon"></div>
+            <textarea name="r" id="r" class="resize-none"></textarea>
         </div>
         <div id="img_view"></div>
     </div>
