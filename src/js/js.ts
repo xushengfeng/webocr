@@ -68,6 +68,10 @@ function create_img(src: string) {
     div.classList.add("img_el");
     let image = document.createElement("img");
     image.src = src;
+    image.onload = () => {
+        image.setAttribute("data-w", String(image.width));
+        image.setAttribute("data-h", String(image.height));
+    };
     div.append(image);
     return div;
 }
@@ -86,8 +90,8 @@ function run_ocr() {
 
 function to_text(img: HTMLImageElement | HTMLCanvasElement, i: number) {
     let canvas = document.createElement("canvas");
-    let w = img.width,
-        h = img.height;
+    let w = Number(img.getAttribute("data-w")),
+        h = Number(img.getAttribute("data-h"));
     canvas.width = w;
     canvas.height = h;
     canvas.getContext("2d").drawImage(img, 0, 0);
