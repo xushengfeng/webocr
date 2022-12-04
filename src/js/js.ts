@@ -1,5 +1,11 @@
 import "../../css/css.css";
 
+if ("serviceWorker" in navigator) {
+    if (import.meta.env.PROD) {
+        navigator.serviceWorker.register("/sw.js");
+    }
+}
+
 const drop_el = document.getElementById("drop");
 const imgs_el = document.getElementById("img_view");
 const upload_pel = document.getElementById("file_input");

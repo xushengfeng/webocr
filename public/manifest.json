@@ -1,6 +1,6 @@
 {
-    "name": "xlinkote",
-    "short_name": "xlinkote",
+    "name": "webocr",
+    "short_name": "webocr",
     "display": "minimal-ui",
     "start_url": "/",
     "scope": "/",
