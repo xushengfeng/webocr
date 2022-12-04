@@ -94,10 +94,10 @@ function run_ocr() {
     });
 }
 
-function to_text(img: HTMLImageElement | HTMLCanvasElement, i: number) {
+function to_text(img: HTMLImageElement, i: number) {
     let canvas = document.createElement("canvas");
-    let w = Number(img.getAttribute("data-w")),
-        h = Number(img.getAttribute("data-h"));
+    let w = img.naturalWidth,
+        h = img.naturalHeight;
     canvas.width = w;
     canvas.height = h;
     canvas.getContext("2d").drawImage(img, 0, 0);
