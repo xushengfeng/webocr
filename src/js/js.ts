@@ -126,7 +126,7 @@ function to_text(img: HTMLImageElement, i: number) {
     });
 }
 
-import ocr from "../../ai/ocr";
+import * as ocr from "esearch-ocr";
 
 start();
 
@@ -134,11 +134,13 @@ import dic from "../../public/ocr/ppocr_keys_v1.txt?raw";
 
 async function start() {
     await ocr.init({
-        det_path: "./ocr/ppocr_det.onnx",
-        rec_path: "./ocr/ppocr_rec.onnx",
+        detPath: "./ocr/ppocr_det.onnx",
+        recPath: "./ocr/ppocr_rec.onnx",
         dic: dic,
         dev: false,
         node: true,
+        ort: window["ort"],
+        detShape: [960, 960],
     });
     ocr_init = true;
     run_el.classList.remove("no_run");
