@@ -140,6 +140,7 @@ async function start() {
         dev: false,
         ort: window["ort"],
         detShape: [640, 640],
+        cv: window["cv"],
     });
     ocr_init = true;
     run_el.classList.remove("no_run");
