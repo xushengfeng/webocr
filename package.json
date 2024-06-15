@@ -15,7 +15,7 @@
   "homepage": "https://github.com/xushengfeng/webocr/",
   "license": "GPL-3.0",
   "dependencies": {
-    "esearch-ocr": "^4.1.2"
+    "esearch-ocr": "^4.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.12",

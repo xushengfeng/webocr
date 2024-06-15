@@ -138,9 +138,8 @@ async function start() {
         recPath: "./ocr/ppocr_rec.onnx",
         dic: dic,
         dev: false,
-        node: true,
         ort: window["ort"],
-        detShape: [960, 960],
+        detShape: [640, 640],
     });
     ocr_init = true;
     run_el.classList.remove("no_run");
