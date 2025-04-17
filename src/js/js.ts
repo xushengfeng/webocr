@@ -130,6 +130,9 @@ function to_text(img: HTMLImageElement, i: number) {
 
 import * as ocr from "esearch-ocr";
 
+// 多线程
+window["ort"].env.wasm.numThreads = 4;
+
 start();
 
 import dic from "../../public/ocr/ppocr_keys_v1.txt?raw";
