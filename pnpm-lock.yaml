@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       esearch-ocr:
-        specifier: ^7.0.0
-        version: 7.0.0
+        specifier: ^8.3.1
+        version: 8.3.1
     devDependencies:
       autoprefixer:
         specifier: ^10.4.19
@@ -533,8 +533,8 @@ packages:
     resolution: {integrity: sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg==}
     engines: {node: '>=0.8.0'}
 
-  esearch-ocr@7.0.0:
-    resolution: {integrity: sha512-NWG/O1Lh4OQmYRFmozZxj2Hg2Aa9WzuciP6kE4qmKl+M0HU0G4SYwT1Xb+47AzNAYrEm9FirHZwXewLyL0XVvg==}
+  esearch-ocr@8.3.1:
+    resolution: {integrity: sha512-YzFx9s+BiSL1l43Omh3+S+Soxz8rlFMveQVTZ4xtKxy/RC+xAqc0HDkHuGIiKUHSBpDMR0aIQEau+BHebPQVGA==}
 
   ext-list@2.2.2:
     resolution: {integrity: sha512-u+SQgsubraE6zItfVA0tBuCBhfU9ogSRnsvygI7wht9TS510oLkBRXBsqopeUG/GBOIQyKZO9wjTqIu/sf5zFA==}
@@ -1599,7 +1599,7 @@ snapshots:
 
   escape-string-regexp@1.0.5: {}
 
-  esearch-ocr@7.0.0:
+  esearch-ocr@8.3.1:
     dependencies:
       onnxruntime-common: 1.21.0
 
